@@ -1,18 +1,19 @@
 version: '3.9'
 
 services:
-  nginx-nexusproxy:
-    image: nginx-nexusproxy
+  nginx:
+    image: nginx:docker
+    restart: always
     ports:
       - "8081:8081"
       - "8082:8082"
       - "8083:8083"
     links:
       - nexus-repo
-    command: [ nginx, '-g', 'daemon off;' ]
 
   nexus-repo:
     image: sonatype/nexus3:3.62.0
+    restart: always
     volumes:
       - 'nexus3-data:/nexus-data'
 

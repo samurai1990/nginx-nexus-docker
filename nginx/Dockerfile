@@ -1,10 +1,10 @@
-FROM nginx:alpine
+FROM nginx:stable-alpine
 
 RUN mkdir -p /etc/nginx/external
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY nexuskey.pem /etc/nginx/external/nexuskey.pem
+COPY server.crt /etc/nginx/external/server.crt
 
-COPY nexuscert.crt /etc/nginx/external/nexuscert.crt
+COPY server.key /etc/nginx/external/server.key
 
