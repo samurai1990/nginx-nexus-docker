@@ -5,9 +5,9 @@ services:
     image: nginx:docker
     restart: always
     ports:
-      - "8081:8081"
-      - "8082:8082"
-      - "8083:8083"
+      - "443:443"
+      - "1111:1111"
+      - "5555:5555"
     links:
       - nexus-repo
 
