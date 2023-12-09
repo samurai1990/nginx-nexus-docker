@@ -4,7 +4,8 @@ RUN mkdir -p /etc/nginx/external
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY server.crt /etc/nginx/external/server.crt
+COPY nexuscert.crt /etc/nginx/external/nexuscert.crt
 
-COPY server.key /etc/nginx/external/server.key
+COPY nexuskey.key /etc/nginx/external/nexuskey.key
 
+COPY .htpasswd /etc/nginx/.htpasswd
